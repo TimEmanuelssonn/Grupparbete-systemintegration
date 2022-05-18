@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<table>
+  <thead>
+  <tr>
+    <th>Full Temperature Report</th>
+    <th>Area</th>
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="obj : ${temps}">
+    <td th:text="${obj} + ' C'"></td>
+
+  </tr>
+  </tbody>
+</table>

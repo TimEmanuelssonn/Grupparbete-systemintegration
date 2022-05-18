@@ -1,4 +1,13 @@
 package com.example.weatherstation.Model;
 
-public class Temp {
+import lombok.Data;
+
+@Data
+public class Temp
+
+{
+    int id;
+    int temperature;
+
+    public Temp(){}
 }
