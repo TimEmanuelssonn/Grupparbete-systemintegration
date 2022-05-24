@@ -46,26 +46,30 @@ public class Listener extends Thread {
 
             while((message = in.readLine()) != null) {
                 if (!message.trim().isEmpty()) {
-                    synchronized (sessions) {
-                        for (WebSocketSession webSocketSession : sessions) {
-                            webSocketSession.sendMessage(new TextMessage(message));
-                        }
-                    }
 
                     try {
+                        // try to set message to double
                         temperature = Double.parseDouble(message);
+
+                        // send message to every session
+                        synchronized (sessions) {
+                            for (WebSocketSession webSocketSession : sessions) {
+                                webSocketSession.sendMessage(new TextMessage(message));
+                            }
+                        }
+
+                        // Insert temperature in database if time is right
+                        LocalTime now = LocalTime.now();
+                        if (now.getMinute() == date.getMinutes() && counter == 0) {
+                            dao.add_new_data(temperature);
+                            counter++;
+                        } else if (now.getMinute() == date_reset.getMinutes() && counter == 1) {
+                            counter = 0;
+                        }
+
                     } catch (Exception e) {
                         System.out.println("Cant find double");
                         e.printStackTrace();
-                    }
-
-                    LocalTime now = LocalTime.now();
-                    if (now.getMinute() == date.getMinutes() && counter == 0) {
-                        System.out.println("temperature added " + temperature);
-                        dao.add_new_data(temperature);
-                        counter++;
-                    } else if (now.getMinute() == date_reset.getMinutes() && counter == 1) {
-                        counter = 0;
                     }
                 }
             }

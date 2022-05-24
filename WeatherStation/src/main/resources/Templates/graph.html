@@ -23,16 +23,31 @@
             background: bisque;
             margin: 10%;
             text-align: left;
-            tex
-
         }
         tr:hover {background-color: dimgray ;}
+
+        a {
+            overflow: hidden;
+            display: inline-block;
+            width: 10%;
+            height: 5%;
+            padding: 20px;
+            border: 1px solid black;
+            color: black;
+            text-align: center;
+            text-decoration: none;
+        }
+        a:hover {
+            background-color: black;
+            color: bisque;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
-<a href="/">
-    <button>Live</button>
-</a>
+<a href="/"> Live </a>
+
 <div class ="container">
     <canvas id ="myChart"></canvas>
 </div>
@@ -43,7 +58,6 @@
 
         let myChart = document.getElementById('myChart').getContext('2d');
         let th_array = [[${array}]];
-        console.log(th_array);
         const data1 = [];
         const dates = [];
 
