@@ -1,0 +1,40 @@
+body
+{
+    background: bisque;
+}
+
+.header {
+    padding-top: 20%;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.in_menu {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.menu {
+    overflow: hidden;
+    width: 20%;
+    height: 20%;
+    border: 1px solid black;
+    background-color: bisque;
+    text-align: center;
+    margin-left: 40%;
+}
+
+
+.menu a {
+    display: inline-block;
+    width: auto;
+    padding: 10px 0px;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: white;
+    color: black;
+}
