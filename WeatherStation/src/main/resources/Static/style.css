@@ -1,16 +1,18 @@
 body
 {
-    background: bisque;
+    background: Lavender;
 }
 
 .header {
     padding-top: 20%;
     text-align: center;
     padding-bottom: 5%;
+    font-family: "monospace", monospace;
 }
 
 a {
     overflow: hidden;
+    font-family: "monospace", monospace;
     display: inline-block;
     width: 20%;
     height: 20%;
@@ -23,5 +25,5 @@ a {
 
 a:hover {
     background-color: black;
-    color: bisque;
+    color: Lavender;
 }

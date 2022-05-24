@@ -10,21 +10,44 @@
     <style>
         body
         {
-            background: bisque;
+            background: lavender;
+        }
+        .rubrik
+        {
+            background: white;
+            text-align: center;
+            font-family: "monospace", monospace;
+            font-size: 25px;
         }
 
-        table, th, td {
+
+
+        .temp-table:nth-child(even) {
+            border: 1px solid;
+            width: 80%;
+            border-spacing: 12px;
+
+            font-family: "monospace", monospace;
+            font-size: 20px;
+            background: white;
+            margin: 10%;
+            text-align: left;
+
+
+        }
+
+        .temp-table
+        {
             border: 1px solid;
             width: 80%;
             border-spacing: 12px;
 
             font-size: 20px;
-            font-family: "Courier New", monospace;
-            background: bisque;
+            font-family: "monospace", monospace;
+            background: lavender;
             margin: 10%;
             text-align: left;
         }
-        tr:hover {background-color: dimgray ;}
 
         a {
             overflow: hidden;
@@ -34,12 +57,13 @@
             padding: 20px;
             border: 1px solid black;
             color: black;
-            text-align: center;
+            font-family: monospace, monospace;
+            text-align: Center;
             text-decoration: none;
         }
         a:hover {
-            background-color: black;
-            color: bisque;
+            background-color: Black;
+            color: Lavender;
             text-decoration: none;
         }
 
@@ -73,8 +97,8 @@
                 datasets: [{
                     label: 'Temperature',
                     data: data1,
-                    backgroundColor: 'black',
-                    borderColor: 'red'
+                    backgroundColor: 'lavender',
+                    borderColor: 'black'
 
                 }]
             },
@@ -85,16 +109,16 @@
 </script>
 
     <div>
-        <table>
-            <thead>
-            <tr>
+        <table class="temp-table">
+            <thead class="temp-table">
+            <tr class="rubrik">
                 <th>Date</th>
                 <th>Temperature</th>
             </tr>
             </thead>
             <tbody>
 
-            <tr th:each="obj : ${temp}">
+            <tr class="temp-table" th:each="obj : ${temp}">
                 <td th:text="${obj.getCreated}"></td>
                 <td th:text="${obj.getTemperature} + ' C'"></td>
             </tr>

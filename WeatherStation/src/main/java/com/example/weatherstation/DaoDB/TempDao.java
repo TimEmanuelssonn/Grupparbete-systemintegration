@@ -12,7 +12,7 @@ public class TempDao
         try (Connection con = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/weatherstation?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true",
                 "root",
-                "password");
+                "123Joakim");
              Statement stmt = con.createStatement();
              ResultSet rs = stmt.executeQuery("select id,temperature,areaId,created from weather")) {
 
@@ -39,7 +39,7 @@ public class TempDao
         try (Connection con = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/weatherstation?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true",
                 "root",
-                "password")){
+                "123Joakim")){
 
             PreparedStatement stmt = con.prepareStatement("INSERT INTO weather (temperature) VALUES (?)");
             stmt.setDouble(1, temp);
