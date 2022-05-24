@@ -16,17 +16,12 @@ public class SocketHandler extends TextWebSocketHandler {
 
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
-        System.out.println("Socket has been added!");
         sessions.add(session);
-        System.out.println(sessions.size());
     }
 
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
-        System.out.println("Socket closed");
         session.close();
-        System.out.println(sessions.size());
         sessions.remove(session);
-        System.out.println(status.getReason());
     }
 }
