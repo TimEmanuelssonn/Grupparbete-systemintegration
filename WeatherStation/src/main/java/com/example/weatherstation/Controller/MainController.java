@@ -1,11 +1,13 @@
 package com.example.weatherstation.Controller;
 
 import com.example.weatherstation.DaoDB.TempDao;
+import com.example.weatherstation.Model.Temp;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class MainController
@@ -24,15 +26,14 @@ public class MainController
         //Live-rapport
     }
 
-    @RequestMapping("/report")
-    public String returnReport(Model model)
+
+    @RequestMapping("/")
+    public String get_all_data(Model model)
     {
-        temps.add(21);
-        temps.add(33);
-        temps.add(24);
-        temps.add(35);
-        model.addAttribute("temps", temps);
-        return "fullreport";
-        //Full historik
+        List<Temp> temp_data = new ArrayList<>();
+        temp_data = dao.get_all_data();
+        model.addAttribute("temp", temp_data);
+
+        return "calle";
     }
 }

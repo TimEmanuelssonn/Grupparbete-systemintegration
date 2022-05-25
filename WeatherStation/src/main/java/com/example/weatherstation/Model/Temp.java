@@ -7,7 +7,10 @@ public class Temp
 
 {
     int id;
-    int temperature;
+    Double temperature;
+    String created;
+    int areaId;
 
     public Temp(){}
+
 }

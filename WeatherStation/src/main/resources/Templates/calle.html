@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<table>
+  <thead>
+  <style type="text/css">
+    body
+    {
+      background: bisque;
+    }
+    table, th, td {
+      border: 1px solid;
+      width: 50%;
+      border-spacing: 12px;
+      column-width: 100px;
+      font-size: 30px;
+      font-family: "Courier New", monospace;
+      background: bisque;
+
+    }
+    tr:hover {background-color: dimgray ;}
+  </style>
+  <tr>
+    <th>Date</th>
+    <th>Temperature</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <a href="index">
+    <button>Live</button>
+  </a>
+
+  <tr th:each="obj : ${temp}">
+    <td th:text="${obj.getCreated}"></td>
+    <td th:text="${obj.getTemperature} + ' C'"></td>
+
+
+  </tr>
+  </tbody>
+</table>
