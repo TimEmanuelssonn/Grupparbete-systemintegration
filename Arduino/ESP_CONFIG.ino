@@ -1,8 +1,8 @@
 #include <SoftwareSerial.h>
 #include <stdlib.h>
-#define ssid "Wu Tang LAN"    // "SSID-WiFiname" 
-#define password "hexkjlmpa"       // "password"
-#define IP "192.168.0.132" 
+#define ssid "ssid"    		  // "SSID-WiFiname" 
+#define password "password"       // "password"
+#define IP "IP" 
 
 SoftwareSerial ESPserial(2, 3); // RX | TX
 

@@ -1,13 +1,13 @@
 #include <SoftwareSerial.h>
 #include <stdlib.h>
-#define ssid "Wu Tang LAN"    // "SSID-WiFiname" 
-#define password "hexkjlmpa"       // "password"
-#define IP "192.168.0.132" 
+#define ssid "ssid"    // "SSID-WiFiname" 
+#define password "password"       // "password"
+#define IP "IP" 
 
 /*
-#define ssid "Tacobaco"    // "SSID-WiFiname" 
-#define password "nejnejnej"       // "password"
-#define IP "172.20.10.8" // mobil
+#define ssid "ssid"    // "SSID-WiFiname" 
+#define password "pass"       // "password"
+#define IP "IP" // mobil
 */
 
 
